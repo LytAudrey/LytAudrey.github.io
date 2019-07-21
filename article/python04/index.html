@@ -1,0 +1,356 @@
+<!DOCTYPE html><html lang="zh-CN"><head><meta name="generator" content="Hexo 3.9.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="keywords" content="LytAudrey, LytAudrey's Blog"><meta name="author" content="LytAudrey"><meta name="description" content="开启python学习(四)"><meta name="copyright" content="LytAudrey"><title>开启python学习(四) | LytAudrey's Blog</title><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css"><link rel="stylesheet" href="/css/index.css?v=1.0.2"><link rel="icon" type="image/png" sizes="32x32" href="https://avatars2.githubusercontent.com/u/52599833?s=460&amp;v=4?v=1.0.2"><link rel="icon" type="image/png" sizes="16x16" href="https://avatars2.githubusercontent.com/u/52599833?s=460&amp;v=4?v=1.0.2"><script>let CONFIG = {
+  back2top_animation: true,
+  sidebar_offsetTop: '20px'
+};
+window.CONFIG = CONFIG;</script></head><body><div id="container"><header id="header" style="background-image: url(http://img.netbian.com/file/2019/0626/3c9908abf073412d1a9f1b853cf33658.jpg)"><nav class="header-nav"><div class="header-nav-inner"><div class="header-nav-menu-icon fa fa-bars"></div><div class="header-nav-search"><i class="fa fa-search"></i><span>搜索</span></div><div class="header-nav-menu"><span><a href="/"><i class="fa fa-home"></i>首页</a></span><span><a href="/archives/"><i class="fa fa-folder-open"></i>归档</a></span><span><a href="/categories/学习屋"><i class="fa fa-th"></i>分类</a></span><span><a href="/tags/python"><i class="fa fa-tags"></i>标签</a></span><span><a href="/about/"><i class="fa fa-user"></i>关于</a></span></div></div></nav><div class="header-info"><div class="header-info-inner"><div class="site-info-title">LytAudrey's Blog</div><div class="site-info-subtitle">景哥，我爱你</div></div></div></header><main id="main"><div class="main-inner"><aside id="sidebar"><div class="sidebar-inner"><div class="sidebar-nav"><span class="sidebar-nav-toc current">文章目录</span><span class="sidebar-nav-overview">站点概览</span></div><section class="sidebar-toc"><div><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#关于编程需要知道的几个东西"><span class="toc-number">1.</span> <span class="toc-text">关于编程需要知道的几个东西</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python的解释器"><span class="toc-number">2.</span> <span class="toc-text">Python的解释器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Terminal-终端-shell"><span class="toc-number">3.</span> <span class="toc-text">Terminal / 终端 / shell</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#环境搭建"><span class="toc-number">4.</span> <span class="toc-text">环境搭建</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Pycharm的基本使用"><span class="toc-number">5.</span> <span class="toc-text">Pycharm的基本使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Python入门第一个程序"><span class="toc-number">6.</span> <span class="toc-text">Python入门第一个程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#变量和数据类型"><span class="toc-number">7.</span> <span class="toc-text">变量和数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#list"><span class="toc-number">8.</span> <span class="toc-text">list []</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tuple"><span class="toc-number">9.</span> <span class="toc-text">tuple ()</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dict-key-value"><span class="toc-number">10.</span> <span class="toc-text">dict {key: value}</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#set"><span class="toc-number">11.</span> <span class="toc-text">set</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运算符"><span class="toc-number">12.</span> <span class="toc-text">运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#一些函数"><span class="toc-number">13.</span> <span class="toc-text">一些函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#转义和格式化输出"><span class="toc-number">14.</span> <span class="toc-text">转义和格式化输出</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件控制和循环"><span class="toc-number">15.</span> <span class="toc-text">条件控制和循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#if"><span class="toc-number">15.1.</span> <span class="toc-text">if</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#循环"><span class="toc-number">15.2.</span> <span class="toc-text">循环</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#迭代器和生成器"><span class="toc-number">16.</span> <span class="toc-text">迭代器和生成器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数"><span class="toc-number">17.</span> <span class="toc-text">函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数据结构"><span class="toc-number">18.</span> <span class="toc-text">数据结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#模块和包"><span class="toc-number">19.</span> <span class="toc-text">模块和包</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sys"><span class="toc-number">20.</span> <span class="toc-text">sys</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件"><span class="toc-number">21.</span> <span class="toc-text">文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#异常-Exception"><span class="toc-number">22.</span> <span class="toc-text">异常(Exception)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#面向对象"><span class="toc-number">23.</span> <span class="toc-text">面向对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#继承"><span class="toc-number">23.1.</span> <span class="toc-text">继承</span></a></li></ol></li></ol></div></section><section class="hide sidebar-overview"><div class="sidebar-author"><img class="sidebar-author-avatar" src="https://avatars2.githubusercontent.com/u/52599833?s=460&amp;v=4" alt="avatar"></div><div class="sidebar-state"><div class="sidebar-state-item sidebar-state-posts"><a href="/archives/"><div class="sidebar-state-item-count">8</div><div class="sidebar-state-item-name">文章</div></a></div><div class="sidebar-state-item sidebar-state-categories"><a href="/categories/学习屋"><div class="sidebar-state-item-count">2</div><div class="sidebar-state-item-name">分类</div></a></div><div class="sidebar-state-item sidebar-state-tags"><a href="/tags/python"><div class="sidebar-state-item-count">3</div><div class="sidebar-state-item-name">标签</div></a></div></div><div class="sidebar-cc"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" target="_blank"><img src="/images/cc-by-nc-sa.svg" alt="creative commons"></a></div></section><div class="sidebar-progress"><div class="sidebar-progress-read"><span>你已阅读了</span><span class="sidebar-progress-number"></span></div><div class="sidebar-progress-line"></div></div></div></aside><div class="main-content code-highlight"><div class="post-header"><h1 class="post-title">开启python学习(四)</h1><div class="post-meta"><span class="post-meta-create"><i class="fa fa-calendar-o"></i><span>发表于 </span><span>2019-07-21</span></span><span class="post-meta-update"><i class="fa fa-calendar-check-o"></i><span>更新于 </span><span>2019-07-21</span></span><span class="post-meta-reading-count"><i class="fa fa-eye"></i><span>阅读次数 </span><span id="busuanzi_value_page_pv"></span></span></div></div><div class="post-body"><p>python是一门<strong>动态</strong>的<strong>强类型解释性</strong>编程语言</p>
+<h3 id="关于编程需要知道的几个东西"><a href="#关于编程需要知道的几个东西" class="headerlink" title="关于编程需要知道的几个东西"></a>关于编程需要知道的几个东西</h3><ol>
+<li>编译器，解释器</li>
+<li>编程语言都有自己的特性和语法，那这样的话编程语言就有分类。<br>一种按强类型和弱类型，一种静态语言和动态语言，一种是编译型语言和解释型语言。</li>
+<li>二进制，内存，引用(指针)(地址)</li>
+</ol>
+<h3 id="Python的解释器"><a href="#Python的解释器" class="headerlink" title="Python的解释器"></a>Python的解释器</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Python 3.7.3 (v3.7.3:ef4ec6ed12, Mar 25 2019, 21:26:53) [MSC v.1916 32 bit (Intel)] on win32</span><br><span class="line">Type "help", "copyright", "credits" or "license" for more information.</span><br><span class="line"><span class="meta">&gt;</span>&gt;&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Terminal-终端-shell"><a href="#Terminal-终端-shell" class="headerlink" title="Terminal / 终端 / shell"></a>Terminal / 终端 / shell</h3><p>用于执行命令 </p>
+<p>命令的格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">命令 [参数可选] 目标(或者要执行的文件或目录)</span><br></pre></td></tr></table></figure>
+
+<p><strong>一些常用的命令</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">cd: change directory</span><br><span class="line">cd ..</span><br><span class="line">cd .</span><br><span class="line">cd /</span><br><span class="line">pwd: print working directory</span><br><span class="line">cls</span><br><span class="line">ls [-a]</span><br><span class="line"></span><br><span class="line">python xxx.py</span><br><span class="line"></span><br><span class="line">mkdir</span><br><span class="line">rm -rf /* 删除根目录下的所有文件</span><br><span class="line">cat</span><br><span class="line">zcat</span><br><span class="line">grep</span><br><span class="line">touch</span><br><span class="line">vim</span><br></pre></td></tr></table></figure>
+
+<p>Q：文件和目录，文件夹的区别？</p>
+<p>Q：绝对路径和相对路径？<br>A：绝对路径就是完整的路径，以根目录开始，而相对路径是相对于一个目录的路径。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">绝对路径: /usr/bin/python3</span><br><span class="line">相对路径: ./path</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h3><ol>
+<li>python3下载(开发环境)</li>
+<li>环境变量的配置</li>
+</ol>
+<p>Q: 为什么要配置环境变量</p>
+<h3 id="Pycharm的基本使用"><a href="#Pycharm的基本使用" class="headerlink" title="Pycharm的基本使用"></a>Pycharm的基本使用</h3><ol>
+<li>设置编码和字体， Source Code Pro / Consola</li>
+<li>其他可选设置：background，template，method separation</li>
+<li>快捷键：CTRL+ZXCVAS/D/FR/G</li>
+<li>CTRL + SHIFT + ALT + C<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">D: duplicate</span><br><span class="line">F: found</span><br><span class="line">R: replace</span><br><span class="line">G: go to line</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="Python入门第一个程序"><a href="#Python入门第一个程序" class="headerlink" title="Python入门第一个程序"></a>Python入门第一个程序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/python3</span></span><br><span class="line"> </span><br><span class="line">print(<span class="string">"Hello, Python!"</span>)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><strong>设置编码</strong></li>
+<li>编写程序</li>
+</ol>
+<p><strong>编写程序需要注意的东西</strong></p>
+<ol>
+<li>命名规范，不可以使用<strong>关键字</strong>，不能以数字开头。注意：命名的规范不只是说变量的命名合法就可以了，可是有一定的规则，比如驼峰法。</li>
+</ol>
+<ul>
+<li><input disabled type="checkbox"> setAge()</li>
+<li><input checked disabled type="checkbox"> set_age()</li>
+<li><input disabled type="checkbox"> SetAge()</li>
+</ul>
+<ol start="2">
+<li>严格的缩进</li>
+<li>注释，多行和单行注释<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="string">注释的内容</span></span><br><span class="line"><span class="string">'''</span></span><br><span class="line"><span class="comment"># 注释的内容</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>代码规范</strong></p>
+<ol>
+<li>比如变量的命名规则？函数的命名规则？文件的命名？<br>看看别人大神是怎么写的，比如可以到github去查找python项目</li>
+<li>模块的分布，比如说你不可能所有代码都写在一个文件，那你就需要按照一种规则是分布</li>
+<li>符号和字母之间，后面要加空格，前面不用。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1. 类名风格是class ServerHealthCheck():</span><br><span class="line">2. 函数名风格是 def obtain_ip(self):</span><br><span class="line">3. 变量名风格是 self, base_url, port, tcp</span><br><span class="line">4. 文件名风格是 site_health.py</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<hr>
+<h3 id="变量和数据类型"><a href="#变量和数据类型" class="headerlink" title="变量和数据类型"></a>变量和数据类型</h3><p>变量：用来存储和复用 ，有存储的空间(内容和地址)，还有类型。</p>
+<p><strong>Python常用的数据类型</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Number</span><br><span class="line">    bool: True、False</span><br><span class="line">    int</span><br><span class="line">    float</span><br><span class="line">    complex</span><br><span class="line">Str</span><br><span class="line">List</span><br><span class="line">Tuple</span><br><span class="line">Set</span><br><span class="line">Dict</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>不可变数据（3 个）：Number、String、Tuple</li>
+<li>可变数据（3 个）：List、Dictionary、Set<br>Q: 什么是可变，什么是不可变，使用的时候需要注意什么地方？比如函数传递参数的时候，是值传递，还是引用传递(地址传递，指针传递)？</li>
+</ul>
+<p>CRUD:增删改查(Create、Retrieve/Read、Update、Delete)</p>
+<p>首先要学会的是遍历，然后是查询</p>
+<h3 id="list"><a href="#list" class="headerlink" title="list []"></a>list []</h3><ol>
+<li>insert和append的区别</li>
+<li>del list[0] 和 list.remove() 和list.pop()区别？</li>
+<li>list.clear()</li>
+</ol>
+<h3 id="tuple"><a href="#tuple" class="headerlink" title="tuple ()"></a>tuple ()</h3><p>和list的区别？不可以改变<br>1.只可以访问</p>
+<h3 id="dict-key-value"><a href="#dict-key-value" class="headerlink" title="dict {key: value}"></a>dict {key: value}</h3><ol>
+<li>不允许有多相同的key，如果有则取最后一个</li>
+<li>key不能被修改，换句话说：<strong>key只能是Number、String、Tuple</strong></li>
+<li>dict.keys()和dict.values()，使用的时候转换为list。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">list(dict.keys())</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="set"><a href="#set" class="headerlink" title="set"></a>set</h3><p>集合，说到集合其实我有想到了数学里面的集合，我们一般就是用来算并集，差集，交集之类的运算，在这里也是如此。</p>
+<ol>
+<li><strong>集合是无序不重复的， 所以每次输出结果都可能不同</strong></li>
+<li>set.add()和set.update())</li>
+<li>set.remove()和set.discard()的区别？注意：<strong>set.remove()如果删除的内容不存在则会报错，而set.discard()不会</strong></li>
+<li>set.pop() 随机移除</li>
+<li>set.union() 并集</li>
+<li>set.intersection() 交集</li>
+<li>set.difference() 差集</li>
+<li>set.copy() 浅拷贝？Q: 什么是浅拷贝？什么是深拷贝?</li>
+</ol>
+<p><strong>内建函数(built-in)</strong><br>Q: 那什么是内建函数？<br>Q: 函数是怎么调用？两种方式？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(&apos;Hello World&apos;)</span><br><span class="line"></span><br><span class="line">str_food = &apos;egg&apos;</span><br><span class="line">str_food.isdigit()</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><ol>
+<li><p>算术运算符 +-<em>/% *</em> //…</p>
+</li>
+<li><p>比较运算符 == != &gt;= &lt;&gt;…<br>Q: == 和 = 的区别？</p>
+</li>
+<li><p>赋值运算符 = += -= %= …</p>
+</li>
+<li><p>位运算符 &amp; | ^ ~ &lt;&lt; &gt;&gt;<br>注: 位运算符是把数字看作<strong>二进制计算</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1 &amp; 1 = 1</span><br><span class="line">1 &amp; 0 = 0</span><br><span class="line"></span><br><span class="line">0 | 1 = 0 如果前面是False，则后面不用判断了</span><br><span class="line">1 | 0 = 0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>逻辑运算符 and or not (&amp;&amp; | !)<br>逻辑: bool，值是True和False</p>
+</li>
+<li><p>成员运算符 in 、not in</p>
+</li>
+<li><p>身份运算符 is 、is not</p>
+</li>
+</ol>
+<p><strong>注意优先级，一般我们不去记，而是用()去使表达更清晰</strong></p>
+<hr>
+<h3 id="一些函数"><a href="#一些函数" class="headerlink" title="一些函数"></a>一些函数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">print()</span><br><span class="line">input() 注: 如果想转为int，要用函数去转换， int(input(&apos;&apos;))</span><br><span class="line">type()</span><br><span class="line">len()</span><br><span class="line">max()</span><br><span class="line">min()</span><br><span class="line"></span><br><span class="line">数学函数</span><br><span class="line">随机函数</span><br><span class="line">range()</span><br></pre></td></tr></table></figure>
+
+<h3 id="转义和格式化输出"><a href="#转义和格式化输出" class="headerlink" title="转义和格式化输出"></a>转义和格式化输出</h3><p>Q: 为什么要转义？<br>A: 因为有时候我们不喜欢直接输出，而是按照某种格式输出</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\n</span><br><span class="line">\t</span><br><span class="line">\r</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p><strong>格式化输出</strong><br>形式/语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(&apos;%?&apos; % (告诉我?里的内容))</span><br><span class="line"></span><br><span class="line">%d</span><br><span class="line">%f</span><br><span class="line">%c</span><br><span class="line">%s</span><br><span class="line"></span><br><span class="line">%x</span><br><span class="line">%p</span><br><span class="line">%o</span><br><span class="line">0xffff</span><br></pre></td></tr></table></figure>
+
+<p>补充：这是旧式的字符串格式化，我们可以用另一个格式化，那就是我们新的<code>format()</code>函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;&#123;&#125;, &#123;&#125;&apos;.formate(x, y)</span><br></pre></td></tr></table></figure>
+
+<p>Q: 十六进制的作用?<br>A: 简化二进制</p>
+<p>跨行编写</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">方法<span class="number">1</span>:</span><br><span class="line">para_str = <span class="string">"""这是一个多行字符串的实例</span></span><br><span class="line"><span class="string">多行字符串可以使用制表符</span></span><br><span class="line"><span class="string">TAB ( \t )。</span></span><br><span class="line"><span class="string">也可以使用换行符 [ \n ]。</span></span><br><span class="line"><span class="string">"""</span></span><br><span class="line"></span><br><span class="line">方法<span class="number">2</span>:</span><br><span class="line">para_str = <span class="string">'测试1'</span> + /</span><br><span class="line">           <span class="string">'测试2'</span> + /</span><br><span class="line">           <span class="string">'测试3'</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="条件控制和循环"><a href="#条件控制和循环" class="headerlink" title="条件控制和循环"></a>条件控制和循环</h3><p>Q: 为什么需要这个？<br>A: 有时候我们做一些事情需要判断才去做，所以要条件控制。而有时候可能会重复做一些事情，那么就需要循环。我们变量也是一个道理，有时候我们需要重复去使用，就会需要变量。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = 3.14 * r * r</span><br><span class="line">我们不可能每次都去写3.14 * r * r</span><br></pre></td></tr></table></figure>
+
+<h4 id="if"><a href="#if" class="headerlink" title="if"></a>if</h4><p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">if 条件表达式:</span><br><span class="line">    内容</span><br><span class="line"></span><br><span class="line">if-elif-else</span><br><span class="line">注意: 条件表达式不能是=，这是赋值，不是条件表达式。还要冒号(:)不能省略</span><br></pre></td></tr></table></figure>
+
+<p>注意: <strong>if可以没有else，但是有else一定要有if。if里面可以嵌套</strong></p>
+<p>Q: 什么是嵌套？<br>Q: if-else和if-elif的区别?</p>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">方法1</span><br><span class="line">while 条件表达式:</span><br><span class="line">    内容</span><br><span class="line">else:(可选)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">方法2</span><br><span class="line">for &lt;variable&gt; in &lt;sequence&gt;:</span><br><span class="line">    内容</span><br><span class="line">else:(可选)</span><br></pre></td></tr></table></figure>
+
+<p><strong>有趣的设计</strong><br>我们可以用一个flag去控制while，当满足条件的时候做什么或者不做什么</p>
+<p><strong>循环里几个有趣的关键字</strong><br>break、continue、pass</p>
+<hr>
+<h3 id="迭代器和生成器"><a href="#迭代器和生成器" class="headerlink" title="迭代器和生成器"></a>迭代器和生成器</h3><p>Q: 什么是迭代器？<br>Q: 为什么有迭代器？和for in 的区别是什么<br>iter():得到一个迭代器<br>next(迭代器):</p>
+<hr>
+<h3 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h3><p>函数其实跟我们变量或者循环一样，目的是减少重复性。</p>
+<p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def 函数名(参数):</span><br><span class="line">    内容</span><br><span class="line">    return 可选返回值，默认是None</span><br></pre></td></tr></table></figure>
+
+<p><strong>注意return不一定是写在最后一行，随便你写在函数体什么位置。return的意义是结束函数并选择返回值</strong></p>
+<p>Q: 结束整个循环有哪些方式？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1. 设置flag，或者条件</span><br><span class="line">2. break</span><br><span class="line">3. 在函数里可以用return</span><br><span class="line">4. exit()</span><br><span class="line">5. ...</span><br></pre></td></tr></table></figure>
+
+<p><strong>函数参数</strong></p>
+<ol>
+<li><p>必须值</p>
+</li>
+<li><p>关键字参数，其实就是说我们调用函数的时候指定参数名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">printinfo</span><span class="params">( name, age )</span>:</span></span><br><span class="line">   <span class="keyword">print</span> (<span class="string">"名字: "</span>, name)</span><br><span class="line">   <span class="keyword">print</span> (<span class="string">"年龄: "</span>, age)</span><br><span class="line">   <span class="keyword">return</span></span><br><span class="line"> </span><br><span class="line">printinfo(age=<span class="number">50</span>, name=<span class="string">'A'</span>)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>默认参数，因为有时候我们需要默认一些东西，比如一开始用户注册，有些东西是必填的，但是一开始用户可以选择填写，那我们就需要给一个默认值。</p>
+</li>
+<li><p>可变参数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functionname</span><span class="params">([formal_args,] *var_args_tuple )</span>:</span></span><br><span class="line">注: var_args_tuple是tuple</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">functionname</span><span class="params">([formal_args,] **var_args_dict )</span>:</span></span><br><span class="line">注: var_args_dict是dict</span><br><span class="line"></span><br><span class="line">*args, **kwargs</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<p><strong>匿名函数</strong><br>lambda表达式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum = lambda a, b: a + b</span><br><span class="line"># 这个sum就是一个函数类型</span><br><span class="line"># 接下来是函数调用的方式</span><br><span class="line">sum(a, b)</span><br></pre></td></tr></table></figure>
+
+<p><strong>变量作用域</strong></p>
+<ol>
+<li>全局变量 Global</li>
+<li>局部变量 Local</li>
+<li>内置作用域 Built-in(内置函数所在模块的范围)</li>
+<li>闭包函数外的函数中 Enclosing</li>
+</ol>
+<p><strong>一些关键字</strong><br>global<br>nonlocal(嵌套里面使用)<br>这两个都是使变量是全局</p>
+<hr>
+<h3 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h3><p>Q: 什么是数据结构？<br>Q: 为什么需要数据结构？<br>A: 因为基本的数据类型，或者字符串，列表，元组，字典，集合不能够完全的表示一种数据，我们需要更复杂的数据类型，这就是我们所说的数据结构。我们应该去思考一下，我们在生活中遇到的一些问题或者数据又应该在编程中如何表示呢？存储和取出的时候又是如何可以按照我们所要求的规则呢？可以好好思考一下。</p>
+<p>堆栈(Stack)<br>特点：FILO</p>
+<p>队列(Queue)<br>特点：FIFO</p>
+<p>用python实现堆栈、队列：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">list.append() 入栈</span><br><span class="line">list.pop() 出栈</span><br><span class="line"></span><br><span class="line">list.appendleft() 入队</span><br><span class="line">list.pop() 出队</span><br></pre></td></tr></table></figure>
+
+<p>Q:树和图，这两种数据结构怎么表示</p>
+<hr>
+<h3 id="模块和包"><a href="#模块和包" class="headerlink" title="模块和包"></a>模块和包</h3><p><strong>模块</strong>：其实就可以理解为我们写的python文件，然后可以思考一下每个文件里面有什么内容组成？当我们引入过来的时候，有点像是把里面的内容复制过来。<br><strong>包</strong>：其实是我们的文件夹，因为我们有时候需要相同的命名，那如果同一个模块的名字一样，那就不知道是谁了，<strong>而且同一个目录下也不允许两个文件命名和扩展名一样</strong>。这时候我们就需要包了。就像我们有时候整理电脑一样，可能会命名同样的文件或者文件夹，但是放在不同的目录下。但是要注意的是，每一个包下都需要一个<code>__init__.py</code>文件</p>
+<p><strong>Q: 如何取找到文件的呢？</strong><br>A: 绝对路径，当前路径。类似于我们的环境变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">两种导入的方式：</span><br><span class="line">1. import 文件名(.py) 全部内容一起导入</span><br><span class="line">2. from 文件名(.py) import 要导入的模块或者函数  导入指定的</span><br><span class="line">注：这样的话就可以快一点</span><br><span class="line"></span><br><span class="line">import test</span><br><span class="line">from test import fib</span><br></pre></td></tr></table></figure>
+
+<h3 id="sys"><a href="#sys" class="headerlink" title="sys"></a>sys</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># for i in sys.argv:</span></span><br><span class="line"><span class="comment">#     print(i)</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># print(sys.api_version)</span></span><br><span class="line"><span class="comment"># print(sys.copyright)</span></span><br><span class="line"><span class="comment"># print(sys.path)</span></span><br><span class="line"><span class="comment"># print(sys.exit())</span></span><br></pre></td></tr></table></figure>
+
+<p>Q: 模块导入的问题？就是引入其他模块的时候，默认是会执行的，但是这并不是我们所想要的。<br>示例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">module1.py</span><br><span class="line">a = <span class="number">5</span></span><br><span class="line">print(<span class="string">"one"</span>)</span><br><span class="line"></span><br><span class="line">module2.py</span><br><span class="line"><span class="keyword">from</span> module_one <span class="keyword">import</span> *</span><br><span class="line">print(<span class="string">"two"</span>)</span><br><span class="line"></span><br><span class="line">结果：</span><br><span class="line">one</span><br><span class="line">two</span><br></pre></td></tr></table></figure>
+
+<p>解决的方法：<br>在每一个模块里，其实Python解释器给我们提供了一个叫做<code>__name__</code>的变量，类型是：<code>&lt;class &#39;str&#39;&gt;</code>。当其值是<code>__main__</code>时，表明在该模块自身运行。而如果是模块名字，那就是在引用程序执行。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># main 主要的，也是我们编程界里所说的入口</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    <span class="comment"># 如果运行的入口是在这里，或者说运行这个文件，就会执行这个</span></span><br><span class="line">    print(<span class="string">'one run? yes'</span>)</span><br><span class="line"><span class="keyword">else</span>: <span class="comment"># 这种情况其实就是文件名</span></span><br><span class="line">    <span class="comment"># 如果是被导入，就会执行这个</span></span><br><span class="line">    print(<span class="string">'one run? no'</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="文件"><a href="#文件" class="headerlink" title="文件"></a>文件</h3><p>权限，只有三种: r、w、x 读写(修改)执行<br>execute</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">d rwx r-x r-x</span><br><span class="line">目录 当前用户，所在组，其他组</span><br><span class="line"></span><br><span class="line">角色，组</span><br><span class="line">directory, read, write, execute</span><br></pre></td></tr></table></figure>
+
+<p>Q: 什么打开模式是在内容后添加，什么是删除全部内容重新添加？<br>A: 即原有内容会被删除: <code>w、wb、wb+、w+</code><br>不会被删除的，而是在文件的结尾添加的：<code>a、ab、ab+、a+</code>(add)</p>
+<p>Q: a和a+的区别？<br><img src="https://www.runoob.com/wp-content/uploads/2013/11/2112205-861c05b2bdbc9c28.png" alt></p>
+<table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">r</th>
+<th align="center">r+</th>
+<th align="center">w</th>
+<th align="center">w+</th>
+<th align="center">a</th>
+<th align="center">a+</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">读</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center"></td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">写</td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">创建</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+</tr>
+<tr>
+<td align="center">覆盖</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">指针在开始</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center">+</td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="center">指针在结尾</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">+</td>
+<td align="center">+</td>
+</tr>
+</tbody></table>
+<p><strong>os（operating system）</strong></p>
+<p><strong>Q</strong>: 最后要关闭文件, file.close()， file是命名的文件对象</p>
+<h3 id="异常-Exception"><a href="#异常-Exception" class="headerlink" title="异常(Exception)"></a>异常(Exception)</h3><p>Q: 为什么会有异常？</p>
+<p>A: 其实就是一些不合语法的操作或处理造成的。比如不能除以一个为0的数，这样是得不到结果的，就会抛出异常了。<strong>但是，其实我们并不希望遇到什么异常都直接结束</strong></p>
+<p>所以我们需要对异常进行处理</p>
+<p><strong>关键字：</strong>try、except</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span> :</span><br><span class="line">    </span><br><span class="line"><span class="keyword">except</span>:</span><br><span class="line">    </span><br><span class="line"><span class="keyword">finally</span>:</span><br><span class="line">    // 无论在任何情况下都会执行</span><br><span class="line">    // 一般用来关闭文件啊</span><br><span class="line">    // f.close()</span><br></pre></td></tr></table></figure>
+
+<p>注意的东西：</p>
+<ol>
+<li>try-except有点像我们的if-else，先去尝试运行try里面的内容，如果有异常就会执行except的内容。<strong>并且try后面的部分内容不会被执行</strong></li>
+<li>一个 try 语句可能包含多个except子句</li>
+</ol>
+<p><strong>抛出异常</strong>：raise</p>
+<p>预定义清理行为，其实就是Python一些简便的写法，可以帮我们进行关闭。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">"myfile.txt"</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">        print(line, end=<span class="string">""</span>)</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><p><strong>关键字</strong>：class</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line"><span class="class"><span class="keyword">class</span> 类名:</span></span><br><span class="line">	属性(成员变量)</span><br><span class="line">	成员方法(成员函数)</span><br><span class="line">	构造方法 __init__(self)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>构造方法是什么：该方法在<strong>实例化</strong>的时候会<strong>自动调用</strong>。目的：就是用于初始化一些参数或者方法</p>
+</li>
+<li><p>类和对象的区别：类就像是我们的一个模板，而对象是我们具体的，<strong>实例化也就是我们所说的初始化。</strong></p>
+</li>
+<li><p>如何创建对象：直接类名(参数)，这里的参数就是我们构造方法的参数，如果没有，就调用默认的，也就是无参。</p>
+</li>
+</ul>
+<p>  <strong>Q: self是什么，有什么作用 ?</strong></p>
+<p>  A: 类的方法与普通的函数只有一个特别的区别——它们必须有一个额外的<strong>第一个参数名称</strong>, 按照惯例它的名称是 self。</p>
+<p>  <strong>Q: self表示的是什么呢？</strong></p>
+<p>  A: self代表类的实例，而不是类。类的实例其实就是我们的对象，代表当前对象的地址。</p>
+<p><strong>方法重写(覆盖)- override</strong></p>
+<p>就是父类的方法我们可以进行重写，函数名字和参数一样，只是内容我们可以去改变。</p>
+<p>​    </p>
+<p><font color="red">私有属性和方法</font></p>
+<p>Q：什么是私有变量，有什么用？</p>
+<p>A：声明为私有，<strong>只能在类的内部调用 ，不能在类的外部调用。</strong>目的：增加了使用的权限，为了安全性，和很棒的设计思想。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__name</span><br><span class="line">__password</span><br><span class="line">声明为私有只需要在前面加__</span><br></pre></td></tr></table></figure>
+
+<p><strong>如果我声明了私有之后，就只能在类的内部访问，但是如果我们还想让使用者可以查看或者修改，我们就可以写一个set或者get方法，然后给使用者调用</strong></p>
+<p>注意：在python里面喜欢用<code>__init__</code>表示，就是在后面也加__，<strong>但是我们不可以这样去做。</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">__name__</span><br><span class="line">__password__</span><br><span class="line">这样是错的，这的话还是公有的，只有在前面加__而后面不加才是私有的</span><br></pre></td></tr></table></figure>
+
+<p><font color="red">运算符的重载(overload)</font></p>
+<p>首先，在我们的基本数据类型中，比如Number类型，或者str类型啊，都可以进行<code>+ - * /</code>之类的操作，这些<code>+ - * /</code>就是我们的运算符。那么我们的类也是一样的，可以进行加减乘除之类的运算符操作，<strong>只不过的是我们需要重写这些运算符操作的方法</strong></p>
+<p>Q: 面向对象的特点？</p>
+<p>A: 一种是面向对象编程，一种是面向过程编程。比如说C语言就是面向过程的一门语言，而Python和Java就是面向对象的编程语言。<strong>面向对象的四大基本特征：封装、抽象、继承、多态</strong>。也正是由于这几个特征，让我使用起来觉得特别舒服。那么下面来具体介绍一下。</p>
+<p>封装：<strong>就是将对象封装成一个高度自治和相对封闭的个体。</strong>说的比较抽象，我来举个例子，比如一个学生，那这个学生的一些属性只能由自己提供的set和get的方法来操作。那这样就保证了安全性。</p>
+<p>抽象：就是找出事物的一些共同特征，封装成一个类。像人就是抽象的。</p>
+<p>继承：把已有的东西或者说类作为自己的内容，就相当于我们继承了父亲的财产。</p>
+<p>多态：是指程序中定义的引用变量所指向的具体类型和通过该引用变量发出的方法调用在编程时不确定，<strong>只有在程序运行期间才确定。</strong>也就是父类或接口定义的引用变量指向了子类或具体的实现类的实例对象。<strong>关键点在于程序的调用方法是运行期动态绑定的。这个你可以研究一下重写和重载的区别，他们两个就发生在不同的时期</strong>至于这个编译器和运行期，在重写和重载的问题时我会再详细说一下，这个跟内存的分配，堆，栈结合起来会比较合适。</p>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">示例：</span><br><span class="line">class 子类(父类):</span><br></pre></td></tr></table></figure>
+
+<p>注：子类一般也有人叫它派生类，而父类也有人叫它基类。</p>
+<p><strong>注意的东西：</strong></p>
+<ol>
+<li><p>继承的时候，只需要在子类的后面加上括号，里面写父类的名称即可。可以多继承，只要在后加逗号(，)即可</p>
+</li>
+<li><p>继承需要覆盖父类的<code>__init__</code>方法，那这个时候我们要先调用父类的<code>__init__</code>构造方法，示例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, age, sex)</span>:</span></span><br><span class="line">    <span class="comment"># 先调用父类构造方法</span></span><br><span class="line">    Person.__init__(self, name, age)</span><br><span class="line">    self.sex = sex</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在子类中如何调用父类的东西？答：只要通过父类名然后点(.)去调用即可，但是要注意的是，每一个调用都需要带上一个<strong>self参数</strong></p>
+   <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">to_string</span><span class="params">(self)</span>:</span></span><br><span class="line">    <span class="comment"># 注意，这里的to_string是父类的方法，我们调用要加上self参数</span></span><br><span class="line">    <span class="keyword">return</span> Person.to_string(self) + <span class="string">', sex:&#123;&#125;'</span>.format(self.sex)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>我们需要改写的方法，那我们就重写(覆盖)父类的方法，我们也可以增加属于自己的方法。</p>
+</li>
+<li><p>定义为私有，子类无法访问</p>
+</li>
+</ol>
+<p>练习：<a href="https://www.runoob.com/python3/python3-examples.html" target="_blank" rel="noopener">菜鸟教程练习题</a></p>
+</div><footer class="post-footer"><div class="post-footer-end"><span>------</span><span>本文结束，感谢您的阅读</span><span>------</span></div><div class="post-footer-copyright"><div class="copyright-author"><span class="copyright-name">本文作者:</span><span class="copyright-value"><a href="https://LytAudrey.github.io">LytAudrey</a></span></div><div class="copyright-link"><span class="copyright-name">本文链接:</span><span class="copyright-value"><a href="https://LytAudrey.github.io/article/python04/">https://LytAudrey.github.io/article/python04/</a></span></div><div class="copyright-notice"><span class="copyright-name">版权声明:</span><span class="copyright-value">本博客所有文章除特别声明外，均采用  <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en" rel="external nofollow" target="_blank">BY-NC-SA</a> 许可协议。转载请注明出处！</span></div></div><div class="post-footer-tags"><i class="fa fa-tags icon"></i><span><a href="https://LytAudrey.github.io/tags/python/" title="python">python</a></span></div><nav id="paginator"><div class="post-paginator"><div class="article-next pull-right"><a href="/article/学习的瓶颈期/"><span class="title">学习的瓶颈期</span><i class="fa fa-chevron-right"></i></a></div></div></nav></footer></div></div></main><footer id="footer"><div class="footer-inner"><div><span>&copy; 2019</span><span> </span><span>LytAudrey.</span></div><div class="busuanzi"><script async src="https://cdn.jsdelivr.net/gh/sukkaw/busuanzi@2.3/bsz.pure.mini.js"></script><span class="busuanzi-uv"><i class="fa fa-user"></i><span>访问人数 </span><span id="busuanzi_value_site_uv"></span></span><span class="separator">|</span><span class="busuanzi-pv"><i class="fa fa-eye"></i><span>浏览总量 </span><span id="busuanzi_value_site_pv"></span></span></div></div></footer><div id="back-top"><div class="back-top-inner" title="回到顶部"><i class="fa fa-rocket"></i></div></div></div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="/js/utils.js?v=1.0.2"></script><script src="/js/scroll.js?v=1.0.2"></script><script src="/js/header.js?v=1.0.2"></script><script src="/js/sidebar.js?v=1.0.2"></script><script src="/js/post.js?v=1.0.2"></script></body></html>
